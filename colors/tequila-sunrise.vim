@@ -57,7 +57,6 @@ let s:green           = s:light_green
 let s:red             = s:light_red
 let s:visual          = s:medium_gray
 let s:yellow          = s:light_yellow
-endif
 
 function! s:h(group, style)
   execute "highlight" a:group

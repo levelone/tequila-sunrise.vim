@@ -45,35 +45,20 @@ let s:yellow          = { "gui": "#F3E430", "cterm": "11"  }
 let s:light_yellow    = { "gui": "#ffff87", "cterm": "228" }
 let s:dark_yellow     = { "gui": "#A89C14", "cterm": "3"   }
 
-let s:background = &background
-
-if &background == "dark"
-  let s:bg              = s:subtle_black
-  let s:bg_subtle       = s:lighter_black
-  let s:bg_very_subtle  = s:light_black
-  let s:norm            = s:lightest_gray
-  let s:norm_subtle     = s:medium_gray
-  let s:purple          = s:light_purple
-  let s:cyan            = s:light_cyan
-  let s:green           = s:light_green
-  let s:red             = s:light_red
-  let s:visual          = s:medium_gray
-  let s:yellow          = s:light_yellow
-else
-  let s:bg              = s:actual_white
-  let s:bg_subtle       = s:light_gray
-  let s:bg_very_subtle  = s:lightest_gray
-  let s:norm            = s:light_black
-  let s:norm_subtle     = s:medium_gray
-  let s:purple          = s:dark_purple
-  let s:cyan            = s:dark_cyan
-  let s:green           = s:dark_green
-  let s:red             = s:dark_red
-  let s:visual          = s:dark_purple
-  let s:yellow          = s:dark_yellow
+set background=dark
+let s:bg              = s:subtle_black
+let s:bg_subtle       = s:lighter_black
+let s:bg_very_subtle  = s:light_black
+let s:norm            = s:lightest_gray
+let s:norm_subtle     = s:medium_gray
+let s:purple          = s:light_purple
+let s:cyan            = s:light_cyan
+let s:green           = s:light_green
+let s:red             = s:light_red
+let s:visual          = s:medium_gray
+let s:yellow          = s:light_yellow
 endif
 
-" https://github.com/noahfrederick/vim-hemisu/
 function! s:h(group, style)
   execute "highlight" a:group
     \ "guifg="   (has_key(a:style, "fg")    ? a:style.fg.gui   : "NONE")
@@ -87,13 +72,9 @@ endfunction
 
 call s:h("Normal",        {"bg": s:bg, "fg": s:norm})
 
-" restore &background's value in case changing Normal changed &background (:help :hi-normal-cterm)
-if &background != s:background
-   execute "set background=" . s:background
-endif
-
-"https://justincypret.com/
-"--------
+" if &background != s:background
+"   execute "set background=" . s:background
+"endif
 
 call s:h("Cursor",        {"bg": s:light_green, "fg": s:norm })
 call s:h("Comment",       {"fg": s:bg_subtle})

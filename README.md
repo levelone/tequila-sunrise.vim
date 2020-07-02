@@ -2,7 +2,7 @@ Note: This is currently under maintenance!!
 
 # Tequila Sunrise
 
-A vibrant Vim colorscheme, inspired by [Monokai](https://github.com/sickill/vim-monokai) and [Paramount]().
+A vibrant Vim colorscheme, inspired by [Monokai](https://github.com/sickill/vim-monokai) and [Paramount](https://github.com/owickstrom/vim-colors-paramount).
 
 
 ## Screenshots
